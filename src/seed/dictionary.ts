@@ -11,7 +11,7 @@ const words = [
   { wordAvar: 'Гъуниб', wordTurkish: 'Gunib', wordRussian: 'Гуниб', wordEnglish: 'Gunib', pronunciation: 'gunib', partOfSpeech: 'noun', category: 'travel', difficulty: 'beginner', exampleAvar: 'Гъуниб гъоркьаб мина буго', exampleTurkish: 'Gunib güzel bir yerdir' },
   { wordAvar: 'Салам', wordTurkish: 'Merhaba', wordRussian: 'Привет', wordEnglish: 'Hello', pronunciation: 'salam', partOfSpeech: 'interjection', category: 'greetings', difficulty: 'beginner', exampleAvar: 'Салам алейкум!', exampleTurkish: 'Selam aleyküm!' },
   { wordAvar: 'Баркала', wordTurkish: 'Teşekkürler', wordRussian: 'Спасибо', wordEnglish: 'Thank you', pronunciation: 'barkala', partOfSpeech: 'interjection', category: 'greetings', difficulty: 'beginner', exampleAvar: 'Баркала дуе!', exampleTurkish: 'Sana teşekkürler!' },
-]
+] as const
 
 export async function seedDictionary(payload: Payload) {
   for (const word of words) {
@@ -21,7 +21,7 @@ export async function seedDictionary(payload: Payload) {
     })
 
     if (existing.docs.length === 0) {
-      await payload.create({ collection: 'dictionary', data: word })
+      await payload.create({ collection: 'dictionary', data: word as any })
       console.log(`Created word: ${word.wordAvar} = ${word.wordTurkish}`)
     }
   }
