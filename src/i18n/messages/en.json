@@ -38,7 +38,38 @@
     "publishedAt": "Published",
     "author": "Author",
     "category": "Category",
-    "autoTranslated": "This article was automatically translated"
+    "autoTranslated": "This article was automatically translated",
+    "source": "Source",
+    "noArticles": "No articles yet."
+  },
+  "news": {
+    "noNews": "No news yet.",
+    "autoTranslated": "Auto-translated"
+  },
+  "gallery": {
+    "noPhotos": "No photos yet.",
+    "photos": "photos"
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "Avar Cultural Platform",
+    "intro": "MagaruLaw is an independent digital platform established to preserve and promote the culture, language and history of the Avar people of Dagestan.",
+    "missionTitle": "Our Mission",
+    "mission": "To unite the globally dispersed Avar diaspora under one digital roof, support the learning and preservation of the Avar language, and deliver current news from Dagestan in Turkish, English and Avar.",
+    "peopleTitle": "About the Avar People",
+    "people": "The Avars (Авар, МагӀарулал) are the largest ethnic group in the Republic of Dagestan. With a population of approximately 1 million, they are one of the largest peoples of the North Caucasus.",
+    "contributeTitle": "Contribute",
+    "contribute": "This platform grows with community contributions. If you would like to become an author, add words to the dictionary, or share photographs, please get in touch.",
+    "stats": {
+      "population": "~1 Million",
+      "populationLabel": "Avar Population",
+      "language": "Avar",
+      "languageLabel": "Native Language",
+      "region": "Dagestan",
+      "regionLabel": "Homeland",
+      "diaspora": "4+ Countries",
+      "diasporaLabel": "Diaspora"
+    }
   },
   "footer": {
     "about": "About",

@@ -38,7 +38,38 @@
     "publishedAt": "Yayınlanma",
     "author": "Yazar",
     "category": "Kategori",
-    "autoTranslated": "Bu haber otomatik çevrilmiştir"
+    "autoTranslated": "Bu haber otomatik çevrilmiştir",
+    "source": "Kaynak",
+    "noArticles": "Henüz makale yok."
+  },
+  "news": {
+    "noNews": "Henüz haber yok.",
+    "autoTranslated": "Otomatik çeviri"
+  },
+  "gallery": {
+    "noPhotos": "Henüz fotoğraf eklenmemiş.",
+    "photos": "fotoğraf"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "subtitle": "Avar Kültür Platformu",
+    "intro": "MagaruLaw, Dağıstan'ın kadim halkı olan Avarların kültürünü, dilini ve tarihini korumak ve yaymak amacıyla kurulmuş bağımsız bir dijital platformdur.",
+    "missionTitle": "Misyonumuz",
+    "mission": "Dünya genelinde dağınık yaşayan Avar diasporasını tek bir dijital çatı altında buluşturmak, Avarca dilinin öğrenilmesini ve korunmasını desteklemek, Dağıstan'dan güncel haberleri Türkçe, İngilizce ve Avarca olarak sunmak.",
+    "peopleTitle": "Avar Halkı Hakkında",
+    "people": "Avarlar (Авар, МагӀарулал), Dağıstan Cumhuriyeti'nin en kalabalık etnik grubudur. Yaklaşık 1 milyon kişilik nüfusuyla Kuzey Kafkasya'nın en büyük halklarından biridir.",
+    "contributeTitle": "Katkıda Bulunun",
+    "contribute": "Bu platform topluluk katkısıyla büyümektedir. Yazar olmak, sözlüğe kelime eklemek veya fotoğraf paylaşmak isterseniz bizimle iletişime geçin.",
+    "stats": {
+      "population": "~1 Milyon",
+      "populationLabel": "Avar Nüfusu",
+      "language": "Avarca",
+      "languageLabel": "Ana Dil",
+      "region": "Dağıstan",
+      "regionLabel": "Ana Yurt",
+      "diaspora": "4+ Ülke",
+      "diasporaLabel": "Diaspora"
+    }
   },
   "footer": {
     "about": "Hakkımızda",
