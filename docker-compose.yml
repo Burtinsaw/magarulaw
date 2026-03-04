@@ -1,0 +1,60 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: magarulaw
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-changeme}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  app:
+    build: .
+    restart: unless-stopped
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: postgresql://postgres:${DB_PASSWORD:-changeme}@db:5432/magarulaw
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET:-change-this-secret-in-production-min32}
+      NEXT_PUBLIC_SITE_URL: ${SITE_URL:-https://magarulaw.com}
+    ports:
+      - "3000:3000"
+    volumes:
+      - media:/app/media
+
+  freshrss:
+    image: freshrss/freshrss:latest
+    restart: unless-stopped
+    environment:
+      TZ: Europe/Istanbul
+      CRON_MIN: "*/30"
+    volumes:
+      - freshrss_data:/var/www/FreshRSS/data
+      - freshrss_extensions:/var/www/FreshRSS/extensions
+    ports:
+      - "8080:80"
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - app
+      - freshrss
+
+volumes:
+  pgdata:
+  media:
+  freshrss_data:
+  freshrss_extensions:
+  caddy_data:
+  caddy_config:

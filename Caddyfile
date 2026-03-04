@@ -1,0 +1,7 @@
+magarulaw.com {
+    reverse_proxy app:3000
+}
+
+rss.magarulaw.com {
+    reverse_proxy freshrss:80
+}
