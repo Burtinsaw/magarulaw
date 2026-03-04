@@ -1,0 +1,12 @@
+import createMiddleware from 'next-intl/middleware'
+import { routing } from './i18n/routing'
+
+export default createMiddleware(routing)
+
+export const config = {
+  matcher: [
+    '/',
+    '/(tr|av|ru|en)/:path*',
+    '/((?!api|admin|_next|_vercel|media|.*\\..*).*)',
+  ],
+}

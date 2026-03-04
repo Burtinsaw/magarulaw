@@ -20,6 +20,16 @@ export default buildConfig({
   },
   collections: [Users, Media],
   editor: lexicalEditor(),
+  localization: {
+    locales: [
+      { label: 'Türkçe', code: 'tr' },
+      { label: 'Авар мацӀ', code: 'av' },
+      { label: 'Русский', code: 'ru' },
+      { label: 'English', code: 'en' },
+    ],
+    defaultLocale: 'tr',
+    fallback: true,
+  },
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),

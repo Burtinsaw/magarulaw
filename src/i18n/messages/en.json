@@ -1,0 +1,49 @@
+{
+  "site": {
+    "name": "MagaruLaw",
+    "tagline": "Digital Home of the Avar People",
+    "description": "Culture, history and language of the Avar people of Dagestan"
+  },
+  "nav": {
+    "home": "Home",
+    "news": "News",
+    "articles": "Articles",
+    "dictionary": "Dictionary",
+    "gallery": "Gallery",
+    "about": "About",
+    "languageLessons": "Language Lessons"
+  },
+  "home": {
+    "latestNews": "Latest News",
+    "latestArticles": "Latest Articles",
+    "wordOfTheDay": "Word of the Day",
+    "photoGallery": "Photo Gallery",
+    "viewAll": "View All",
+    "listen": "Listen"
+  },
+  "dictionary": {
+    "search": "Search word...",
+    "avar": "Avar",
+    "turkish": "Turkish",
+    "russian": "Russian",
+    "english": "English",
+    "example": "Example Sentence",
+    "pronunciation": "Pronunciation",
+    "categories": "Categories",
+    "allWords": "All Words",
+    "difficulty": "Level"
+  },
+  "articles": {
+    "readMore": "Read More",
+    "publishedAt": "Published",
+    "author": "Author",
+    "category": "Category",
+    "autoTranslated": "This article was automatically translated"
+  },
+  "footer": {
+    "about": "About",
+    "contact": "Contact",
+    "becomeAuthor": "Become an Author",
+    "rights": "All rights reserved"
+  }
+}

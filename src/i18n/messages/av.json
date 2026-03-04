@@ -1,0 +1,49 @@
+{
+  "site": {
+    "name": "МагӀарулав",
+    "tagline": "Авар халкъалъул цӀияб хъизан",
+    "description": "Дагъистаналъул авар халкъалъул культура, тарих ва мацӀ"
+  },
+  "nav": {
+    "home": "Бетӏер хӀал",
+    "news": "Хабарал",
+    "articles": "МакъалабӀи",
+    "dictionary": "Словарь",
+    "gallery": "Галерея",
+    "about": "ГӀуниб",
+    "languageLessons": "МацӀалъул дарсал"
+  },
+  "home": {
+    "latestNews": "ЦӀияб хабарал",
+    "latestArticles": "ЦӀияб макъалабӀи",
+    "wordOfTheDay": "Къоялъул калима",
+    "photoGallery": "Суратазул галерея",
+    "viewAll": "ЦинагӀи бихьизе",
+    "listen": "Лъазе"
+  },
+  "dictionary": {
+    "search": "Калима чӀезе...",
+    "avar": "Авар",
+    "turkish": "Туркиял",
+    "russian": "Рус",
+    "english": "Ингилис",
+    "example": "Мисал",
+    "pronunciation": "Лъималъи",
+    "categories": "Категорияби",
+    "allWords": "ЦинагӀиб калимаби",
+    "difficulty": "ДаражӀа"
+  },
+  "articles": {
+    "readMore": "ЦӀалдохъе",
+    "publishedAt": "Печатлъана",
+    "author": "Автор",
+    "category": "Категория",
+    "autoTranslated": "Гьаб макъала автомат таржума гьабуна"
+  },
+  "footer": {
+    "about": "ГӀуниб",
+    "contact": "Бахъ бицине",
+    "becomeAuthor": "Автор гьечӀо",
+    "rights": "ЦинагӀиб хӀукъуби хъвана"
+  }
+}

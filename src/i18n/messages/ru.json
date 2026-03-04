@@ -1,0 +1,49 @@
+{
+  "site": {
+    "name": "MagaruLaw",
+    "tagline": "Цифровой дом аварского народа",
+    "description": "Культура, история и язык аварского народа Дагестана"
+  },
+  "nav": {
+    "home": "Главная",
+    "news": "Новости",
+    "articles": "Статьи",
+    "dictionary": "Словарь",
+    "gallery": "Галерея",
+    "about": "О нас",
+    "languageLessons": "Уроки языка"
+  },
+  "home": {
+    "latestNews": "Последние новости",
+    "latestArticles": "Последние статьи",
+    "wordOfTheDay": "Слово дня",
+    "photoGallery": "Фотогалерея",
+    "viewAll": "Показать все",
+    "listen": "Слушать"
+  },
+  "dictionary": {
+    "search": "Поиск слова...",
+    "avar": "Аварский",
+    "turkish": "Турецкий",
+    "russian": "Русский",
+    "english": "Английский",
+    "example": "Пример предложения",
+    "pronunciation": "Произношение",
+    "categories": "Категории",
+    "allWords": "Все слова",
+    "difficulty": "Уровень"
+  },
+  "articles": {
+    "readMore": "Читать далее",
+    "publishedAt": "Опубликовано",
+    "author": "Автор",
+    "category": "Категория",
+    "autoTranslated": "Эта статья была переведена автоматически"
+  },
+  "footer": {
+    "about": "О нас",
+    "contact": "Контакты",
+    "becomeAuthor": "Стать автором",
+    "rights": "Все права защищены"
+  }
+}

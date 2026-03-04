@@ -1,0 +1,49 @@
+{
+  "site": {
+    "name": "MagaruLaw",
+    "tagline": "Avar Halkının Dijital Evi",
+    "description": "Dağıstan Avar halkının kültürü, tarihi ve dili"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "news": "Haberler",
+    "articles": "Makaleler",
+    "dictionary": "Sözlük",
+    "gallery": "Galeri",
+    "about": "Hakkımızda",
+    "languageLessons": "Dil Dersleri"
+  },
+  "home": {
+    "latestNews": "Son Haberler",
+    "latestArticles": "Son Makaleler",
+    "wordOfTheDay": "Günün Kelimesi",
+    "photoGallery": "Fotoğraf Galerisi",
+    "viewAll": "Tümünü Gör",
+    "listen": "Dinle"
+  },
+  "dictionary": {
+    "search": "Kelime ara...",
+    "avar": "Avarca",
+    "turkish": "Türkçe",
+    "russian": "Rusça",
+    "english": "İngilizce",
+    "example": "Örnek Cümle",
+    "pronunciation": "Telaffuz",
+    "categories": "Kategoriler",
+    "allWords": "Tüm Kelimeler",
+    "difficulty": "Seviye"
+  },
+  "articles": {
+    "readMore": "Devamını Oku",
+    "publishedAt": "Yayınlanma",
+    "author": "Yazar",
+    "category": "Kategori",
+    "autoTranslated": "Bu haber otomatik çevrilmiştir"
+  },
+  "footer": {
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "becomeAuthor": "Yazar Ol",
+    "rights": "Tüm hakları saklıdır"
+  }
+}
