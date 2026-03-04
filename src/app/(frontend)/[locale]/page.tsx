@@ -20,12 +20,11 @@ function HomeContent({ locale }: { locale: string }) {
   return (
     <div>
       {/* ═══════════════ HERO SECTION ═══════════════ */}
-      <section className="relative overflow-hidden gradient-warm" style={{ margin: '-2rem -1rem 0', padding: '0' }}>
+      <section className="relative overflow-hidden gradient-warm">
         <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
           <div className="max-w-3xl">
-            {/* Decorative label */}
             <div className="flex items-center gap-3 mb-6">
-              <div className="h-px flex-1 max-w-12" style={{ backgroundColor: '#d4a853' }} />
+              <div className="h-px w-12" style={{ backgroundColor: '#d4a853' }} />
               <span
                 className="text-xs font-semibold tracking-widest uppercase"
                 style={{ color: '#d4a853' }}
@@ -55,11 +54,8 @@ function HomeContent({ locale }: { locale: string }) {
             <div className="flex flex-wrap gap-4">
               <Link
                 href={`/${locale}/makaleler`}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300"
-                style={{
-                  backgroundColor: '#d4a853',
-                  color: '#153324',
-                }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:brightness-110"
+                style={{ backgroundColor: '#d4a853', color: '#153324' }}
               >
                 Keşfet
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
@@ -68,11 +64,8 @@ function HomeContent({ locale }: { locale: string }) {
               </Link>
               <Link
                 href={`/${locale}/sozluk`}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300"
-                style={{
-                  border: '1px solid rgba(212, 168, 83, 0.3)',
-                  color: '#d4a853',
-                }}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-white/10"
+                style={{ border: '1px solid rgba(212, 168, 83, 0.3)', color: '#d4a853' }}
               >
                 Sözlük
               </Link>
@@ -80,7 +73,7 @@ function HomeContent({ locale }: { locale: string }) {
           </div>
         </div>
 
-        {/* Mountain silhouette at bottom */}
+        {/* Mountain silhouette */}
         <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32">
           <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-full">
             <path d="M0 120 L0 80 L120 50 L240 70 L360 30 L480 55 L600 15 L720 50 L840 25 L960 60 L1080 35 L1200 65 L1320 40 L1440 75 L1440 120Z" fill="#fdfbf7" opacity="0.12" />
@@ -88,7 +81,7 @@ function HomeContent({ locale }: { locale: string }) {
           </svg>
         </div>
 
-        {/* Subtle texture */}
+        {/* Dot pattern texture */}
         <div className="absolute inset-0 opacity-5" style={{
           backgroundImage: `radial-gradient(circle at 25% 25%, rgba(212, 168, 83, 0.3) 1px, transparent 1px)`,
           backgroundSize: '40px 40px',
@@ -98,7 +91,7 @@ function HomeContent({ locale }: { locale: string }) {
       {/* ═══════════════ CONTENT AREA ═══════════════ */}
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
-        {/* ─── News + Word of Day Grid ─── */}
+        {/* ─── News + Word of Day ─── */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 sm:mt-16">
 
           {/* Latest News */}
@@ -112,18 +105,9 @@ function HomeContent({ locale }: { locale: string }) {
               ].map((item, i) => (
                 <article
                   key={i}
-                  className="group flex gap-5 p-4 rounded-xl transition-all duration-300 cursor-pointer hover-lift"
-                  style={{ backgroundColor: '#f7f2e8', border: '1px solid transparent' }}
-                  onMouseEnter={(e: any) => {
-                    e.currentTarget.style.backgroundColor = '#fff'
-                    e.currentTarget.style.borderColor = '#e8e0d4'
-                  }}
-                  onMouseLeave={(e: any) => {
-                    e.currentTarget.style.backgroundColor = '#f7f2e8'
-                    e.currentTarget.style.borderColor = 'transparent'
-                  }}
+                  className="group flex gap-5 p-4 rounded-xl transition-all duration-300 cursor-pointer hover-lift border border-transparent hover:border-[#e8e0d4] hover:bg-white"
+                  style={{ backgroundColor: '#f7f2e8' }}
                 >
-                  {/* Placeholder image */}
                   <div
                     className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg flex-shrink-0 flex items-center justify-center"
                     style={{ backgroundColor: '#e8e0d4' }}
@@ -143,14 +127,11 @@ function HomeContent({ locale }: { locale: string }) {
                       </span>
                       <span className="text-xs" style={{ color: '#9c8b72' }}>{item.date}</span>
                     </div>
-                    <h3
-                      className="text-base sm:text-lg font-semibold leading-snug"
-                      style={{ color: '#2a2520' }}
-                    >
+                    <h3 className="text-base sm:text-lg font-semibold leading-snug" style={{ color: '#2a2520' }}>
                       {item.title}
                     </h3>
                     <p className="text-sm mt-1 line-clamp-2" style={{ color: '#7d6e59' }}>
-                      Bu haberin içeriği yakında eklenecektir. Takipte kalın.
+                      Bu haberin içeriği yakında eklenecektir.
                     </p>
                   </div>
                 </article>
@@ -163,9 +144,7 @@ function HomeContent({ locale }: { locale: string }) {
             <SectionHeader title={t('wordOfTheDay')} />
             <div
               className="relative rounded-2xl overflow-hidden p-6 sm:p-8"
-              style={{
-                background: 'linear-gradient(160deg, #153324 0%, #1e4430 60%, #0d2218 100%)',
-              }}
+              style={{ background: 'linear-gradient(160deg, #153324 0%, #1e4430 60%, #0d2218 100%)' }}
             >
               {/* Decorative diamond */}
               <div className="absolute top-4 right-4 opacity-10">
@@ -198,14 +177,8 @@ function HomeContent({ locale }: { locale: string }) {
                 </span>
               </div>
 
-              <div
-                className="rounded-lg p-4"
-                style={{ backgroundColor: 'rgba(255,255,255,0.04)', borderLeft: '3px solid #d4a853' }}
-              >
-                <p
-                  className="text-base italic mb-1"
-                  style={{ fontFamily: "'Playfair Display', Georgia, serif", color: '#e8e0d4' }}
-                >
+              <div className="rounded-lg p-4" style={{ backgroundColor: 'rgba(255,255,255,0.04)', borderLeft: '3px solid #d4a853' }}>
+                <p className="text-base italic mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif", color: '#e8e0d4' }}>
                   &ldquo;Дир росдал гъоркьаб рукъ буго&rdquo;
                 </p>
                 <p className="text-sm" style={{ color: '#9c8b72' }}>
@@ -225,36 +198,31 @@ function HomeContent({ locale }: { locale: string }) {
           </section>
         </div>
 
-        {/* ─── Articles Section ─── */}
+        {/* ─── Articles ─── */}
         <section className="mt-16 sm:mt-20 animate-fade-up" style={{ animationDelay: '0.2s' }}>
           <SectionHeader title={t('latestArticles')} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { title: 'Avar Halısının Geometrik Sırları', category: 'Kültür', image: '🏔' },
-              { title: 'Dağıstan\'ın Kadim Dilleri', category: 'Dil', image: '📜' },
-              { title: 'Gunib: Tarihin Zirvesi', category: 'Tarih', image: '⛰' },
+              { title: 'Avar Halısının Geometrik Sırları', category: 'Kültür', emoji: '🏔' },
+              { title: 'Dağıstan\'ın Kadim Dilleri', category: 'Dil', emoji: '📜' },
+              { title: 'Gunib: Tarihin Zirvesi', category: 'Tarih', emoji: '⛰' },
             ].map((item, i) => (
               <article
                 key={i}
-                className="group rounded-2xl overflow-hidden hover-lift cursor-pointer"
-                style={{ backgroundColor: '#fff', border: '1px solid #e8e0d4' }}
+                className="group rounded-2xl overflow-hidden hover-lift cursor-pointer border"
+                style={{ backgroundColor: '#fff', borderColor: '#e8e0d4' }}
               >
-                {/* Image placeholder */}
                 <div
                   className="h-48 sm:h-52 flex items-center justify-center text-5xl relative overflow-hidden"
                   style={{ backgroundColor: '#f3efe8' }}
                 >
-                  <span>{item.image}</span>
-                  {/* Geometric overlay pattern */}
+                  <span>{item.emoji}</span>
                   <div className="absolute inset-0 opacity-[0.03]" style={{
                     backgroundImage: `repeating-linear-gradient(45deg, #153324 0px, #153324 1px, transparent 1px, transparent 20px)`,
                   }} />
                 </div>
                 <div className="p-5 sm:p-6">
-                  <span
-                    className="text-xs font-semibold tracking-wide uppercase"
-                    style={{ color: '#b85c38' }}
-                  >
+                  <span className="text-xs font-semibold tracking-wide uppercase" style={{ color: '#b85c38' }}>
                     {item.category}
                   </span>
                   <h3
@@ -278,7 +246,7 @@ function HomeContent({ locale }: { locale: string }) {
           </div>
         </section>
 
-        {/* ─── Gallery Section ─── */}
+        {/* ─── Gallery ─── */}
         <section className="mt-16 sm:mt-20 mb-12 animate-fade-up" style={{ animationDelay: '0.3s' }}>
           <SectionHeader title={t('photoGallery')} />
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -300,7 +268,6 @@ function HomeContent({ locale }: { locale: string }) {
                 <div className="absolute inset-0 flex items-center justify-center text-4xl sm:text-5xl">
                   {item.emoji}
                 </div>
-                {/* Hover overlay */}
                 <div
                   className="absolute inset-0 flex items-end p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   style={{ background: 'linear-gradient(to top, rgba(13, 34, 24, 0.8) 0%, transparent 60%)' }}
@@ -346,7 +313,6 @@ function HomeContent({ locale }: { locale: string }) {
   )
 }
 
-/* ─── Reusable section header ─── */
 function SectionHeader({ title }: { title: string }) {
   return (
     <div className="flex items-center gap-4 mb-6">
