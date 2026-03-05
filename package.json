@@ -20,6 +20,7 @@
     "@payloadcms/next": "3.78.0",
     "@payloadcms/richtext-lexical": "3.78.0",
     "@payloadcms/ui": "3.78.0",
+    "@tailwindcss/oxide-win32-x64-msvc": "^4.2.1",
     "@tailwindcss/postcss": "^4.2.1",
     "cloudinary": "^2.9.0",
     "cross-env": "^7.0.3",

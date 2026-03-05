@@ -1,85 +1,154 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 @theme {
-  --font-heading: "Playfair Display", "Georgia", serif;
-  --font-body: "Source Sans 3", "Noto Sans", system-ui, sans-serif;
+  /* Typography */
+  --font-display: "Playfair Display", "Georgia", serif;
+  --font-body: "Source Serif 4", "Times New Roman", serif;
+  --font-ui: "Noto Sans", system-ui, sans-serif;
 
-  --color-stone-50: #faf8f5;
-  --color-stone-100: #f3efe8;
-  --color-stone-200: #e8e0d4;
-  --color-stone-300: #d4c8b5;
-  --color-stone-400: #b8a78e;
-  --color-stone-500: #9c8b72;
-  --color-stone-600: #7d6e59;
-  --color-stone-700: #5e5243;
-  --color-stone-800: #3f3730;
-  --color-stone-900: #2a2520;
+  /* Earth & Stone */
+  --color-obsidian: #1a1714;
+  --color-charcoal: #2d2926;
+  --color-walnut: #3e3630;
+  --color-clay: #6b5a4e;
+  --color-sandstone: #a89279;
+  --color-parchment: #e8dcc8;
+  --color-cream: #f5f0e6;
+  --color-snow: #faf8f4;
 
-  --color-amber-400: #d4a853;
-  --color-amber-500: #c49a3c;
-  --color-amber-600: #a8832e;
-
-  --color-forest-600: #2d5a3d;
-  --color-forest-700: #1e4430;
-  --color-forest-800: #153324;
-  --color-forest-900: #0d2218;
-
-  --color-rust-500: #b85c38;
-  --color-rust-600: #9c4a2a;
-
-  --color-cream: #fdfbf7;
-  --color-parchment: #f7f2e8;
+  /* Accents */
+  --color-kilim-deep: #7a1f1f;
+  --color-kilim: #a63d2f;
+  --color-kilim-light: #c4593e;
+  --color-indigo-deep: #1e3a5f;
+  --color-indigo: #2c5282;
+  --color-indigo-light: #4a7ab5;
+  --color-gold: #c5973e;
+  --color-gold-light: #ddb866;
+  --color-emerald: #2d6a4f;
 }
 
-/* Avar geometric carpet pattern — SVG-based decorative border */
-.avar-pattern {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='20' viewBox='0 0 60 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 L10 0 L20 10 L10 20Z' fill='%23d4a853' opacity='0.15'/%3E%3Cpath d='M20 10 L30 0 L40 10 L30 20Z' fill='%23b85c38' opacity='0.12'/%3E%3Cpath d='M40 10 L50 0 L60 10 L50 20Z' fill='%23d4a853' opacity='0.15'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: 60px 20px;
-}
-
-.avar-pattern-border {
-  background-image: url("data:image/svg+xml,%3Csvg width='40' height='8' viewBox='0 0 40 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 4 L4 0 L8 4 L4 8Z' fill='%23d4a853' opacity='0.4'/%3E%3Cpath d='M10 4 L14 0 L18 4 L14 8Z' fill='%23b85c38' opacity='0.3'/%3E%3Cpath d='M20 4 L24 0 L28 4 L24 8Z' fill='%23d4a853' opacity='0.4'/%3E%3Cpath d='M30 4 L34 0 L38 4 L34 8Z' fill='%23b85c38' opacity='0.3'/%3E%3C/svg%3E");
-  background-repeat: repeat-x;
-  background-size: 40px 8px;
-}
-
-/* Mountain silhouette decorative element */
-.mountain-silhouette {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1440 120' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath d='M0 120 L0 80 L120 40 L240 65 L360 20 L480 50 L600 10 L720 45 L840 15 L960 55 L1080 25 L1200 60 L1320 30 L1440 70 L1440 120Z' fill='%23153324' opacity='0.08'/%3E%3Cpath d='M0 120 L0 90 L180 55 L320 75 L480 35 L640 65 L800 30 L960 70 L1120 40 L1280 72 L1440 50 L1440 120Z' fill='%23153324' opacity='0.05'/%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-size: 100% 120px;
-  background-position: bottom;
-}
-
-/* Noise texture overlay for depth */
-.texture-noise::before {
-  content: '';
-  position: absolute;
+/* ========================================
+   GEOMETRIC PATTERN — SVG BACKGROUND
+   ======================================== */
+.pattern-overlay {
+  position: fixed;
   inset: 0;
-  opacity: 0.03;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   pointer-events: none;
-  z-index: 1;
+  z-index: 0;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0L60 30L30 60L0 30Z' fill='none' stroke='%232d2926' stroke-width='0.5'/%3E%3Cpath d='M30 10L50 30L30 50L10 30Z' fill='none' stroke='%232d2926' stroke-width='0.3'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
 }
 
-/* Stagger animation for cards */
-@keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* ========================================
+   SECTION DIVIDERS & TRANSITIONS
+   ======================================== */
+.section-divider {
+  height: 4px;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--color-kilim) 0px, var(--color-kilim) 16px,
+    var(--color-gold) 16px, var(--color-gold) 20px,
+    var(--color-indigo) 20px, var(--color-indigo) 36px,
+    var(--color-gold) 36px, var(--color-gold) 40px
+  );
+  opacity: 0.6;
 }
 
-.animate-fade-up {
-  animation: fadeSlideUp 0.6s ease-out both;
+.section-fade-to-dark {
+  height: 48px;
+  background: linear-gradient(180deg, var(--color-snow) 0%, var(--color-charcoal) 100%);
 }
 
-/* Subtle hover lift */
+.section-fade-to-light {
+  height: 48px;
+  background: linear-gradient(180deg, var(--color-charcoal) 0%, var(--color-snow) 100%);
+}
+
+/* ========================================
+   BUTTONS
+   ======================================== */
+.btn {
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 14px 32px;
+  border-radius: 4px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary {
+  background: var(--color-kilim);
+  color: var(--color-cream);
+  box-shadow: 0 2px 12px rgba(166,61,47,0.3);
+}
+.btn-primary:hover {
+  background: var(--color-kilim-deep);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(166,61,47,0.4);
+}
+
+.btn-outline {
+  border: 1.5px solid rgba(197,151,62,0.4);
+  color: var(--color-gold-light);
+}
+.btn-outline:hover {
+  border-color: var(--color-gold);
+  background: rgba(197,151,62,0.08);
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   SCROLL ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.pending {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+.stagger-children .reveal:nth-child(1) { transition-delay: 0s; }
+.stagger-children .reveal:nth-child(2) { transition-delay: 0.08s; }
+.stagger-children .reveal:nth-child(3) { transition-delay: 0.16s; }
+.stagger-children .reveal:nth-child(4) { transition-delay: 0.24s; }
+.stagger-children .reveal:nth-child(5) { transition-delay: 0.32s; }
+.stagger-children .reveal:nth-child(6) { transition-delay: 0.4s; }
+
+/* ========================================
+   HOVER LIFT (reusable)
+   ======================================== */
 .hover-lift {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -88,26 +157,31 @@
   box-shadow: 0 12px 40px -8px rgba(42, 37, 32, 0.15);
 }
 
-/* Warm gradient overlays */
-.gradient-warm {
-  background: linear-gradient(135deg, var(--color-forest-800) 0%, var(--color-forest-900) 40%, #1a1510 100%);
+/* ========================================
+   HERO ORNAMENT SPIN
+   ======================================== */
+@keyframes ornamentSpin {
+  to { transform: translateY(-50%) rotate(360deg); }
 }
 
-.gradient-gold {
-  background: linear-gradient(135deg, var(--color-amber-400) 0%, var(--color-amber-600) 100%);
+@media (prefers-reduced-motion: reduce) {
+  .hero-ornament { animation: none !important; }
 }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: var(--color-stone-100);
-}
+/* ========================================
+   CUSTOM SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--color-obsidian); }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-stone-400);
+  background: var(--color-clay);
   border-radius: 4px;
 }
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-stone-500);
+::-webkit-scrollbar-thumb:hover { background: var(--color-sandstone); }
+
+/* ========================================
+   RESPONSIVE SPACING
+   ======================================== */
+@media (max-width: 768px) {
+  .btn { padding: 14px 28px; min-height: 44px; }
 }

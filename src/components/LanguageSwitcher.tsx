@@ -22,21 +22,17 @@ export function LanguageSwitcher() {
   }
 
   return (
-    <div className="flex items-center rounded-lg overflow-hidden border" style={{ borderColor: '#e8e0d4' }}>
-      {localeConfig.map((loc, i) => (
+    <div className="flex gap-[2px] rounded-md p-[3px]" style={{ background: 'rgba(255,255,255,0.06)' }}>
+      {localeConfig.map((loc) => (
         <button
           key={loc.code}
           onClick={() => switchLocale(loc.code)}
           title={loc.name}
-          className={`px-2.5 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 ${
-            locale === loc.code
-              ? ''
-              : 'hover:bg-[#f3efe8]'
-          }`}
+          className="px-2.5 py-1 text-[0.7rem] font-semibold tracking-[0.05em] rounded transition-all duration-200"
           style={{
-            backgroundColor: locale === loc.code ? '#153324' : 'transparent',
-            color: locale === loc.code ? '#d4a853' : '#9c8b72',
-            borderLeft: i > 0 ? '1px solid #e8e0d4' : 'none',
+            fontFamily: "'Noto Sans', system-ui, sans-serif",
+            backgroundColor: locale === loc.code ? '#c5973e' : 'transparent',
+            color: locale === loc.code ? '#1a1714' : '#a89279',
           }}
         >
           {loc.label}

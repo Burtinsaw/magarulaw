@@ -14,6 +14,13 @@
     "languageLessons": "Language Lessons"
   },
   "home": {
+    "tagline": "Discover, Preserve, Celebrate Avar Culture",
+    "description": "An independent platform bringing together the language, history and cultural heritage of the ancient Avar people of Dagestan.",
+    "featuresTitle": "Explore the Platform",
+    "articlesTitle": "Latest Articles",
+    "dictionaryTitle": "Avar Dictionary",
+    "galleryTitle": "Photo Gallery",
+    "newsTitle": "Latest News",
     "latestNews": "Latest News",
     "latestArticles": "Latest Articles",
     "wordOfTheDay": "Word of the Day",

@@ -3,6 +3,8 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { PatternOverlay } from '@/components/PatternOverlay'
+import { ScrollToTop } from '@/components/ScrollToTop'
 
 const locales = ['tr', 'av', 'ru', 'en']
 
@@ -28,9 +30,11 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <PatternOverlay />
       <Header locale={locale} />
-      <main>{children}</main>
+      <main className="relative z-[1]">{children}</main>
       <Footer />
+      <ScrollToTop />
     </NextIntlClientProvider>
   )
 }

@@ -1,328 +1,529 @@
-import { useTranslations } from 'next-intl'
-import { setRequestLocale } from 'next-intl/server'
+import { getTranslations } from 'next-intl/server'
 import Link from 'next/link'
+import Image from 'next/image'
+import { SectionHeader } from '@/components/SectionHeader'
+import { FeatureCard } from '@/components/FeatureCard'
+import { HeroSection } from '@/components/HeroSection'
+import { ScrollReveal } from '@/components/ScrollReveal'
 
-export default async function HomePage({
-  params,
-}: {
-  params: Promise<{ locale: string }>
-}) {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params
-  setRequestLocale(locale)
-
-  return <HomeContent locale={locale} />
-}
-
-function HomeContent({ locale }: { locale: string }) {
-  const t = useTranslations('home')
-  const tSite = useTranslations('site')
+  const t = await getTranslations('home')
 
   return (
-    <div>
-      {/* ═══════════════ HERO SECTION ═══════════════ */}
-      <section className="relative overflow-hidden gradient-warm">
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
-          <div className="max-w-3xl">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="h-px w-12" style={{ backgroundColor: '#d4a853' }} />
-              <span
-                className="text-xs font-semibold tracking-widest uppercase"
-                style={{ color: '#d4a853' }}
-              >
-                Dağıstan · Avar
-              </span>
-            </div>
+    <>
+      {/* Hero */}
+      <HeroSection locale={locale} tagline={t('tagline')} description={t('description')} />
 
-            <h1
-              className="text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6"
-              style={{
-                fontFamily: "'Playfair Display', Georgia, serif",
-                fontWeight: 700,
-                color: '#f3efe8',
-              }}
-            >
-              {tSite('tagline')}
-            </h1>
-
-            <p
-              className="text-lg sm:text-xl leading-relaxed mb-10 max-w-xl"
-              style={{ color: '#b8a78e' }}
-            >
-              {tSite('description')}
-            </p>
-
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href={`/${locale}/makaleler`}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:brightness-110"
-                style={{ backgroundColor: '#d4a853', color: '#153324' }}
-              >
-                Keşfet
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M3 8h10M9 4l4 4-4 4" />
-                </svg>
-              </Link>
-              <Link
-                href={`/${locale}/sozluk`}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 hover:bg-white/10"
-                style={{ border: '1px solid rgba(212, 168, 83, 0.3)', color: '#d4a853' }}
-              >
-                Sözlük
-              </Link>
-            </div>
+      {/* Features */}
+      <section className="relative py-14 lg:py-20" style={{ background: '#faf8f4' }}>
+        <div
+          className="absolute top-0 left-0 right-0 h-[3px]"
+          style={{
+            background:
+              'repeating-linear-gradient(90deg, #a63d2f 0px, #a63d2f 12px, #c5973e 12px, #c5973e 16px, #2c5282 16px, #2c5282 28px, #c5973e 28px, #c5973e 32px)',
+          }}
+        />
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-10">
+          <ScrollReveal>
+            <SectionHeader label="Platform" title={t('featuresTitle')} />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-12">
+            {featureCards.map((card, i) => (
+              <ScrollReveal key={i} delay={i * 80}>
+                <FeatureCard
+                  index={i}
+                  icon={card.icon}
+                  title={card.title}
+                  description={card.description}
+                  linkText={card.linkText}
+                  href={`/${locale}/${card.href}`}
+                />
+              </ScrollReveal>
+            ))}
           </div>
         </div>
-
-        {/* Mountain silhouette */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32">
-          <svg viewBox="0 0 1440 120" preserveAspectRatio="none" className="w-full h-full">
-            <path d="M0 120 L0 80 L120 50 L240 70 L360 30 L480 55 L600 15 L720 50 L840 25 L960 60 L1080 35 L1200 65 L1320 40 L1440 75 L1440 120Z" fill="#fdfbf7" opacity="0.12" />
-            <path d="M0 120 L0 90 L180 60 L320 78 L480 40 L640 68 L800 35 L960 72 L1120 45 L1280 70 L1440 55 L1440 120Z" fill="#fdfbf7" />
-          </svg>
-        </div>
-
-        {/* Dot pattern texture */}
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, rgba(212, 168, 83, 0.3) 1px, transparent 1px)`,
-          backgroundSize: '40px 40px',
-        }} />
       </section>
 
-      {/* ═══════════════ CONTENT AREA ═══════════════ */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
-        {/* ─── News + Word of Day ─── */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 sm:mt-16">
-
-          {/* Latest News */}
-          <section className="lg:col-span-2 animate-fade-up">
-            <SectionHeader title={t('latestNews')} />
-            <div className="space-y-4">
-              {[
-                { title: 'Dağıstan\'da kültürel festival hazırlıkları', date: '4 Mart 2026', tag: 'Kültür' },
-                { title: 'Avarca eğitim programı genişliyor', date: '3 Mart 2026', tag: 'Eğitim' },
-                { title: 'Gunib Kalesi restorasyon çalışmaları', date: '2 Mart 2026', tag: 'Tarih' },
-              ].map((item, i) => (
-                <article
-                  key={i}
-                  className="group flex gap-5 p-4 rounded-xl transition-all duration-300 cursor-pointer hover-lift border border-transparent hover:border-[#e8e0d4] hover:bg-white"
-                  style={{ backgroundColor: '#f7f2e8' }}
-                >
-                  <div
-                    className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg flex-shrink-0 flex items-center justify-center"
-                    style={{ backgroundColor: '#e8e0d4' }}
-                  >
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" style={{ color: '#b8a78e' }}>
-                      <path d="M4 16l4-4 4 4 4-8 4 4" stroke="currentColor" strokeWidth="1.5" />
-                      <rect x="2" y="2" width="20" height="20" rx="3" stroke="currentColor" strokeWidth="1.5" />
-                    </svg>
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span
-                        className="text-xs font-semibold px-2 py-0.5 rounded-full"
-                        style={{ backgroundColor: 'rgba(45, 90, 61, 0.08)', color: '#2d5a3d' }}
-                      >
-                        {item.tag}
-                      </span>
-                      <span className="text-xs" style={{ color: '#9c8b72' }}>{item.date}</span>
-                    </div>
-                    <h3 className="text-base sm:text-lg font-semibold leading-snug" style={{ color: '#2a2520' }}>
-                      {item.title}
-                    </h3>
-                    <p className="text-sm mt-1 line-clamp-2" style={{ color: '#7d6e59' }}>
-                      Bu haberin içeriği yakında eklenecektir.
-                    </p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </section>
-
-          {/* Word of the Day */}
-          <section className="animate-fade-up" style={{ animationDelay: '0.15s' }}>
-            <SectionHeader title={t('wordOfTheDay')} />
-            <div
-              className="relative rounded-2xl overflow-hidden p-6 sm:p-8"
-              style={{ background: 'linear-gradient(160deg, #153324 0%, #1e4430 60%, #0d2218 100%)' }}
-            >
-              {/* Decorative diamond */}
-              <div className="absolute top-4 right-4 opacity-10">
-                <svg width="60" height="60" viewBox="0 0 60 60">
-                  <path d="M30 0 L60 30 L30 60 L0 30 Z" stroke="#d4a853" strokeWidth="1" fill="none" />
-                  <path d="M30 10 L50 30 L30 50 L10 30 Z" stroke="#d4a853" strokeWidth="0.5" fill="none" />
-                </svg>
-              </div>
-
-              <p className="text-xs font-semibold tracking-widest uppercase mb-4" style={{ color: '#d4a853' }}>
-                Авар мацӀ
-              </p>
-
-              <p
-                className="text-4xl sm:text-5xl mb-3"
-                style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 700, color: '#f3efe8' }}
+      {/* Articles */}
+      <section className="relative py-14 lg:py-20" style={{ background: '#faf8f4' }}>
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-10">
+          <ScrollReveal>
+            <SectionHeader label="Blog" title={t('articlesTitle')} />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 mt-12">
+            {/* Featured article */}
+            <ScrollReveal>
+              <Link
+                href={`/${locale}/makaleler/avar-mutfagi`}
+                className="group relative block rounded-lg overflow-hidden min-h-[400px]"
               >
-                Росдал
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-5">
-                <span className="px-3 py-1 rounded-full text-sm" style={{ backgroundColor: 'rgba(212, 168, 83, 0.15)', color: '#d4a853' }}>
-                  Köy
-                </span>
-                <span className="px-3 py-1 rounded-full text-sm" style={{ backgroundColor: 'rgba(255,255,255,0.06)', color: '#b8a78e' }}>
-                  Village
-                </span>
-                <span className="px-3 py-1 rounded-full text-sm" style={{ backgroundColor: 'rgba(255,255,255,0.06)', color: '#b8a78e' }}>
-                  Село
-                </span>
-              </div>
-
-              <div className="rounded-lg p-4" style={{ backgroundColor: 'rgba(255,255,255,0.04)', borderLeft: '3px solid #d4a853' }}>
-                <p className="text-base italic mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif", color: '#e8e0d4' }}>
-                  &ldquo;Дир росдал гъоркьаб рукъ буго&rdquo;
-                </p>
-                <p className="text-sm" style={{ color: '#9c8b72' }}>
-                  &ldquo;Benim köyümde güzel bir ev var&rdquo;
-                </p>
-              </div>
-
-              <div className="mt-5 flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: 'rgba(212, 168, 83, 0.15)' }}>
-                  <svg width="14" height="14" viewBox="0 0 24 24" fill="#d4a853">
-                    <polygon points="5,3 19,12 5,21" />
-                  </svg>
-                </div>
-                <span className="text-xs" style={{ color: '#9c8b72' }}>Telaffuzu dinle</span>
-              </div>
-            </div>
-          </section>
-        </div>
-
-        {/* ─── Articles ─── */}
-        <section className="mt-16 sm:mt-20 animate-fade-up" style={{ animationDelay: '0.2s' }}>
-          <SectionHeader title={t('latestArticles')} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { title: 'Avar Halısının Geometrik Sırları', category: 'Kültür', emoji: '🏔' },
-              { title: 'Dağıstan\'ın Kadim Dilleri', category: 'Dil', emoji: '📜' },
-              { title: 'Gunib: Tarihin Zirvesi', category: 'Tarih', emoji: '⛰' },
-            ].map((item, i) => (
-              <article
-                key={i}
-                className="group rounded-2xl overflow-hidden hover-lift cursor-pointer border"
-                style={{ backgroundColor: '#fff', borderColor: '#e8e0d4' }}
-              >
+                <Image
+                  src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80&fit=crop"
+                  alt="Avar mutfak kulturu"
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
                 <div
-                  className="h-48 sm:h-52 flex items-center justify-center text-5xl relative overflow-hidden"
-                  style={{ backgroundColor: '#f3efe8' }}
-                >
-                  <span>{item.emoji}</span>
-                  <div className="absolute inset-0 opacity-[0.03]" style={{
-                    backgroundImage: `repeating-linear-gradient(45deg, #153324 0px, #153324 1px, transparent 1px, transparent 20px)`,
-                  }} />
-                </div>
-                <div className="p-5 sm:p-6">
-                  <span className="text-xs font-semibold tracking-wide uppercase" style={{ color: '#b85c38' }}>
-                    {item.category}
+                  className="absolute inset-0"
+                  style={{
+                    background:
+                      'linear-gradient(to top, rgba(26,23,20,0.9) 0%, rgba(26,23,20,0.3) 50%, transparent 100%)',
+                  }}
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                  <span
+                    className="inline-block px-3 py-1 rounded text-[0.7rem] font-semibold uppercase tracking-wider mb-3"
+                    style={{
+                      background: 'rgba(197,151,62,0.2)',
+                      color: '#ddb866',
+                      fontFamily: "'Noto Sans', system-ui",
+                    }}
+                  >
+                    Kultur
                   </span>
                   <h3
-                    className="text-lg sm:text-xl mt-2 leading-snug"
-                    style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 600, color: '#2a2520' }}
+                    className="text-[1.4rem] lg:text-[1.6rem] mb-2"
+                    style={{
+                      fontFamily: "'Playfair Display', Georgia, serif",
+                      fontWeight: 700,
+                      color: '#f5f0e6',
+                    }}
                   >
-                    {item.title}
+                    Avar Mutfak Kulturu: Hinkal ve Otesi
                   </h3>
-                  <p className="text-sm mt-2 leading-relaxed" style={{ color: '#7d6e59' }}>
-                    Yakında detaylı içerik eklenecektir...
+                  <p className="text-[0.88rem]" style={{ color: '#a89279' }}>
+                    5 dk okuma
                   </p>
-                  <div className="mt-4 flex items-center gap-1 text-sm font-medium" style={{ color: '#2d5a3d' }}>
-                    <span>Devamını oku</span>
-                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform group-hover:translate-x-1">
-                      <path d="M3 8h10M9 4l4 4-4 4" />
-                    </svg>
+                </div>
+              </Link>
+            </ScrollReveal>
+
+            {/* Article list */}
+            <div className="flex flex-col gap-4">
+              {articleListItems.map((item, i) => (
+                <ScrollReveal key={i} delay={i * 80}>
+                  <Link
+                    href={`/${locale}/makaleler/${item.slug}`}
+                    className="group flex gap-4 p-4 rounded-lg transition-all duration-300 hover:translate-x-1"
+                    style={{
+                      background: 'rgba(45,41,38,0.02)',
+                      border: '1px solid rgba(45,41,38,0.06)',
+                    }}
+                  >
+                    <div className="w-20 h-20 rounded-md overflow-hidden flex-shrink-0 relative">
+                      <Image src={item.img} alt={item.title} fill className="object-cover" />
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <h4
+                        className="text-[0.95rem] mb-1 line-clamp-2"
+                        style={{
+                          fontFamily: "'Playfair Display', Georgia, serif",
+                          fontWeight: 600,
+                          color: '#2d2926',
+                        }}
+                      >
+                        {item.title}
+                      </h4>
+                      <span className="text-[0.78rem]" style={{ color: '#a89279' }}>
+                        {item.meta}
+                      </span>
+                    </div>
+                  </Link>
+                </ScrollReveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section transition */}
+      <div className="section-fade-to-dark" />
+
+      {/* Dictionary (dark) */}
+      <section
+        className="relative py-14 lg:py-20 overflow-hidden"
+        style={{ background: '#2d2926', color: '#e8dcc8' }}
+      >
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            background:
+              'radial-gradient(ellipse 60% 50% at 20% 50%, rgba(44,82,130,0.3), transparent), radial-gradient(ellipse 50% 40% at 80% 50%, rgba(166,61,47,0.2), transparent)',
+          }}
+        />
+        <div className="relative max-w-[1320px] mx-auto px-6 lg:px-10">
+          <ScrollReveal>
+            <SectionHeader label="Sozluk" title={t('dictionaryTitle')} dark />
+          </ScrollReveal>
+
+          {/* Search */}
+          <ScrollReveal>
+            <div className="max-w-[560px] mx-auto mt-10 mb-12">
+              <div
+                className="flex items-center gap-3 px-5 py-3 rounded-lg"
+                style={{
+                  background: 'rgba(255,255,255,0.06)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                }}
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a89279" strokeWidth="2">
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="M21 21l-4.35-4.35" />
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Kelime ara..."
+                  className="bg-transparent border-none outline-none flex-1 text-[0.95rem] placeholder:text-[#6b5a4e]"
+                  style={{ color: '#e8dcc8', fontFamily: "'Source Serif 4', serif" }}
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+
+          {/* Word cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {dictWords.map((word, i) => (
+              <ScrollReveal key={i} delay={i * 60}>
+                <div
+                  className="p-5 rounded-lg transition-all duration-300 hover:translate-y-[-4px]"
+                  style={{
+                    background: 'rgba(255,255,255,0.04)',
+                    border: '1px solid rgba(255,255,255,0.06)',
+                  }}
+                >
+                  <h4
+                    className="text-[1.15rem] mb-1"
+                    style={{
+                      fontFamily: "'Playfair Display', Georgia, serif",
+                      fontWeight: 700,
+                      color: '#ddb866',
+                    }}
+                  >
+                    {word.word}
+                  </h4>
+                  <p className="text-[0.82rem] mb-2" style={{ color: '#a89279' }}>
+                    {word.translations}
+                  </p>
+                  <p className="text-[0.85rem] italic" style={{ color: 'rgba(232,220,200,0.6)' }}>
+                    {word.example}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <Link
+              href={`/${locale}/sozluk`}
+              className="btn btn-outline"
+              style={{ borderColor: 'rgba(197,151,62,0.4)', color: '#ddb866' }}
+            >
+              Tum Sozluge Git
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Section transition */}
+      <div className="section-fade-to-light" />
+
+      {/* Gallery */}
+      <section className="py-14 lg:py-20" style={{ background: '#faf8f4' }}>
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-10">
+          <ScrollReveal>
+            <SectionHeader label="Galeri" title={t('galleryTitle')} />
+          </ScrollReveal>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 mt-12 auto-rows-[200px] lg:auto-rows-[240px]">
+            {galleryItems.map((item, i) => (
+              <ScrollReveal
+                key={i}
+                delay={i * 60}
+                className={i === 0 ? 'col-span-2 row-span-2' : ''}
+              >
+                <div className="group relative w-full h-full rounded-lg overflow-hidden cursor-pointer">
+                  <Image
+                    src={item.img}
+                    alt={item.label}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div
+                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
+                    style={{
+                      background: 'linear-gradient(to top, rgba(26,23,20,0.8), transparent 60%)',
+                    }}
+                  >
+                    <span
+                      className="text-[0.85rem] font-semibold"
+                      style={{ color: '#f5f0e6', fontFamily: "'Noto Sans', system-ui" }}
+                    >
+                      {item.label}
+                    </span>
                   </div>
                 </div>
-              </article>
+              </ScrollReveal>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* ─── Gallery ─── */}
-        <section className="mt-16 sm:mt-20 mb-12 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          <SectionHeader title={t('photoGallery')} />
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-            {[
-              { label: 'Dağ Manzarası', emoji: '🏔️' },
-              { label: 'Avar Halısı', emoji: '🪡' },
-              { label: 'Kadim Köy', emoji: '🏘️' },
-              { label: 'Geleneksel Dans', emoji: '💃' },
-              { label: 'Gunib Kalesi', emoji: '🏰' },
-              { label: 'Yemek Kültürü', emoji: '🫓' },
-              { label: 'El Sanatları', emoji: '🏺' },
-              { label: 'Doğa', emoji: '🌿' },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="group relative aspect-square rounded-xl overflow-hidden cursor-pointer"
-                style={{ backgroundColor: '#f3efe8' }}
-              >
-                <div className="absolute inset-0 flex items-center justify-center text-4xl sm:text-5xl">
-                  {item.emoji}
-                </div>
+      {/* News */}
+      <section className="py-14 lg:py-20" style={{ background: '#f5f0e6' }}>
+        <div
+          className="absolute left-0 right-0 h-[3px]"
+          style={{
+            background:
+              'repeating-linear-gradient(90deg, #a63d2f 0px, #a63d2f 12px, #c5973e 12px, #c5973e 16px, #2c5282 16px, #2c5282 28px, #c5973e 28px, #c5973e 32px)',
+          }}
+        />
+        <div className="max-w-[1320px] mx-auto px-6 lg:px-10">
+          <ScrollReveal>
+            <SectionHeader label="Haberler" title={t('newsTitle')} />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+            {newsItems.map((item, i) => (
+              <ScrollReveal key={i} delay={i * 80}>
                 <div
-                  className="absolute inset-0 flex items-end p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ background: 'linear-gradient(to top, rgba(13, 34, 24, 0.8) 0%, transparent 60%)' }}
+                  className="flex gap-5 p-5 rounded-lg transition-all duration-300 hover:translate-y-[-4px]"
+                  style={{ background: '#faf8f4', border: '1px solid rgba(45,41,38,0.06)' }}
                 >
-                  <span className="text-xs sm:text-sm font-medium" style={{ color: '#f3efe8' }}>
-                    {item.label}
-                  </span>
+                  <div
+                    className="flex-shrink-0 w-16 h-16 rounded-lg flex flex-col items-center justify-center"
+                    style={{ background: 'rgba(166,61,47,0.08)' }}
+                  >
+                    <span
+                      className="text-[1.4rem] leading-none font-bold"
+                      style={{ color: '#a63d2f', fontFamily: "'Playfair Display', serif" }}
+                    >
+                      {item.day}
+                    </span>
+                    <span
+                      className="text-[0.65rem] uppercase font-semibold tracking-wider"
+                      style={{ color: '#a89279' }}
+                    >
+                      {item.month}
+                    </span>
+                  </div>
+                  <div>
+                    <h4
+                      className="text-[1rem] mb-1"
+                      style={{
+                        fontFamily: "'Playfair Display', Georgia, serif",
+                        fontWeight: 600,
+                        color: '#2d2926',
+                      }}
+                    >
+                      {item.title}
+                    </h4>
+                    <p className="text-[0.85rem] line-clamp-2" style={{ color: '#6b5a4e' }}>
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
-        </section>
-
-        {/* ─── Cultural Quote Banner ─── */}
-        <section
-          className="relative rounded-2xl overflow-hidden p-8 sm:p-12 mb-16 text-center"
-          style={{ backgroundColor: '#f7f2e8', border: '1px solid #e8e0d4' }}
-        >
-          <div className="avar-pattern h-5 absolute top-0 left-0 right-0 opacity-40" />
-          <div className="relative z-10">
-            <svg width="32" height="32" viewBox="0 0 32 32" className="mx-auto mb-4" style={{ color: '#d4a853' }}>
-              <path d="M16 2 L30 16 L16 30 L2 16 Z" stroke="currentColor" strokeWidth="1.5" fill="none" />
-              <path d="M16 8 L24 16 L16 24 L8 16 Z" stroke="currentColor" strokeWidth="1" fill="none" opacity="0.5" />
-            </svg>
-            <blockquote
-              className="text-2xl sm:text-3xl lg:text-4xl mb-4"
-              style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 500, fontStyle: 'italic', color: '#2a2520' }}
-            >
-              &ldquo;Гьалмагъ — вацасан кьолаб&rdquo;
-            </blockquote>
-            <p className="text-base sm:text-lg" style={{ color: '#7d6e59' }}>
-              &ldquo;Dost — kardeşten yakındır&rdquo;
-            </p>
-            <p className="text-sm mt-2" style={{ color: '#9c8b72' }}>
-              — Avar atasözü
-            </p>
-          </div>
-          <div className="avar-pattern h-5 absolute bottom-0 left-0 right-0 opacity-40" />
-        </section>
-
-      </div>
-    </div>
+        </div>
+      </section>
+    </>
   )
 }
 
-function SectionHeader({ title }: { title: string }) {
-  return (
-    <div className="flex items-center gap-4 mb-6">
-      <h2
-        className="text-xl sm:text-2xl"
-        style={{ fontFamily: "'Playfair Display', Georgia, serif", fontWeight: 700, color: '#2a2520' }}
-      >
-        {title}
-      </h2>
-      <div className="flex-1 h-px" style={{ backgroundColor: '#e8e0d4' }} />
-    </div>
-  )
-}
+/* ── Static data ── */
+
+const featureCards = [
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M4 19.5A2.5 2.5 0 016.5 17H20" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z" />
+      </svg>
+    ),
+    title: 'Makaleler',
+    description: 'Avar tarihi, kulturu ve dilini konu alan derinlemesine arastirma yazilari.',
+    linkText: 'Makaleleri Oku',
+    href: 'makaleler',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <circle cx="12" cy="12" r="10" />
+        <path d="M2 12h20" />
+        <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
+      </svg>
+    ),
+    title: 'Sozluk',
+    description: 'Avarca-Turkce-Rusca-Ingilizce kapsamli sozluk ve dil kaynaklari.',
+    linkText: 'Sozluge Git',
+    href: 'sozluk',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <circle cx="8.5" cy="8.5" r="1.5" />
+        <path d="M21 15l-5-5L5 21" />
+      </svg>
+    ),
+    title: 'Galeri',
+    description: 'Geleneksel sanatlar, dogal guzellikler ve kulturel miras fotograflari.',
+    linkText: 'Galeriyi Goruntule',
+    href: 'galeri',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z" />
+        <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z" />
+      </svg>
+    ),
+    title: 'Dersler',
+    description: 'Avarca dil dersleri, gramer kaynaklari ve interaktif ogrenme araclari.',
+    linkText: 'Derslere Basla',
+    href: 'dersler',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+        <path d="M14 2v6h6" />
+        <path d="M16 13H8" />
+        <path d="M16 17H8" />
+        <path d="M10 9H8" />
+      </svg>
+    ),
+    title: 'Haberler',
+    description: 'Avar toplulugu ve kulturel etkinlikler hakkinda guncel haberler.',
+    linkText: 'Haberleri Oku',
+    href: 'haberler',
+  },
+  {
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+        <circle cx="9" cy="7" r="4" />
+        <path d="M23 21v-2a4 4 0 00-3-3.87" />
+        <path d="M16 3.13a4 4 0 010 7.75" />
+      </svg>
+    ),
+    title: 'Topluluk',
+    description: 'Avar diasporasi ve kultur meraklilari icin katilimci topluluk alani.',
+    linkText: 'Topluluga Katil',
+    href: 'topluluk',
+  },
+]
+
+const articleListItems = [
+  {
+    slug: 'avar-dili-tarihi',
+    title: 'Avar Dilinin Tarihi ve Gelisimi',
+    meta: '8 dk okuma',
+    img: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=200&q=80&fit=crop',
+  },
+  {
+    slug: 'kafkas-sanati',
+    title: 'Kafkas Hali Sanati ve Geometrik Desenler',
+    meta: '6 dk okuma',
+    img: 'https://images.unsplash.com/photo-1590736969955-71cc94801759?w=200&q=80&fit=crop',
+  },
+  {
+    slug: 'dagistan-cografyasi',
+    title: 'Dagistanin Cografyasi ve Dogal Guzellikleri',
+    meta: '7 dk okuma',
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&q=80&fit=crop',
+  },
+  {
+    slug: 'avar-muzigi',
+    title: 'Geleneksel Avar Muzigi ve Enstrumanlari',
+    meta: '5 dk okuma',
+    img: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=200&q=80&fit=crop',
+  },
+]
+
+const dictWords = [
+  {
+    word: 'Maga',
+    translations: 'TR: Gunes / RU: Solntse / EN: Sun',
+    example: '"Maga bokana kana." - Gunes dogdu.',
+  },
+  {
+    word: 'Mehed',
+    translations: 'TR: Dag / RU: Gora / EN: Mountain',
+    example: '"Mehed ghurula buga." - Dag yuksek.',
+  },
+  {
+    word: 'Rakhel',
+    translations: 'TR: Yildiz / RU: Zvezda / EN: Star',
+    example: '"Rakhulzabi ts\'ola." - Yildizlar parlak.',
+  },
+  {
+    word: 'Eber',
+    translations: 'TR: Su / RU: Voda / EN: Water',
+    example: '"Eber ts\'ad buk\'una." - Su temiz.',
+  },
+  {
+    word: 'Rosal',
+    translations: 'TR: Orman / RU: Les / EN: Forest',
+    example: '"Rosda ghveda buga." - Orman buyuk.',
+  },
+  {
+    word: 'Xan',
+    translations: 'TR: Ev / RU: Dom / EN: Home',
+    example: '"Xan bokana buga." - Ev sicak.',
+  },
+]
+
+const galleryItems = [
+  {
+    img: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80&fit=crop',
+    label: 'Kafkas Daglari',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1590736969955-71cc94801759?w=600&q=80&fit=crop',
+    label: 'Geleneksel Hali',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=80&fit=crop',
+    label: 'Yerel Mutfak',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1544376383-f6418ae57526?w=600&q=80&fit=crop',
+    label: 'Tarihi Kale',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=600&q=80&fit=crop',
+    label: 'Geleneksel Muzik',
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=600&q=80&fit=crop',
+    label: 'El Yazmalari',
+  },
+]
+
+const newsItems = [
+  {
+    day: '28',
+    month: 'Sub',
+    title: 'Avar Dil Festivali 2026',
+    desc: 'Yillik Avar dil ve kultur festivali Makhachkala\'da duzenleniyor.',
+  },
+  {
+    day: '15',
+    month: 'Sub',
+    title: 'Yeni Sozluk Guncellemesi',
+    desc: '2.400 yeni kelime eklendi. Toplam kelime sayisi 12.400\'u gecti.',
+  },
+  {
+    day: '03',
+    month: 'Sub',
+    title: 'Online Avarca Kursu Basladi',
+    desc: 'Ucretsiz online Avarca dil kursu kayitlari acildi.',
+  },
+  {
+    day: '20',
+    month: 'Oca',
+    title: 'Kultur Fotografcilik Yarismasi',
+    desc: 'Kafkas kulturu temali fotografcilik yarismasi sonuclandi.',
+  },
+]
