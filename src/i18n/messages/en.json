@@ -78,6 +78,29 @@
       "diasporaLabel": "Diaspora"
     }
   },
+  "lessons": {
+    "title": "Avar Language Lessons",
+    "subtitle": "Авар мацӀ — Learn Avar step by step",
+    "allLessons": "All Lessons",
+    "level": "Level",
+    "words": "words",
+    "phrases": "phrases",
+    "startLesson": "Start Lesson",
+    "noLessons": "No lessons yet.",
+    "backToLessons": "Back to Lessons",
+    "vocabulary": "Vocabulary",
+    "examples": "Examples",
+    "grammar": "Grammar",
+    "nextLesson": "Next Lesson",
+    "prevLesson": "Previous Lesson",
+    "avar": "Avar",
+    "turkish": "Turkish",
+    "russian": "Russian",
+    "singular": "Singular",
+    "plural": "Plural",
+    "specialSounds": "Special Sounds",
+    "alphabet": "Alphabet"
+  },
   "footer": {
     "about": "About",
     "contact": "Contact",

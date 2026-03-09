@@ -27,6 +27,7 @@ export function Header({ locale }: { locale: string }) {
     { href: `/${locale}/makaleler`, label: t('articles') },
     { href: `/${locale}/sozluk`, label: t('dictionary') },
     { href: `/${locale}/galeri`, label: t('gallery') },
+    { href: `/${locale}/dersler`, label: t('languageLessons') },
     { href: `/${locale}/hakkimizda`, label: t('about') },
   ]
 

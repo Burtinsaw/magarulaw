@@ -1,0 +1,792 @@
+[
+  {
+    "id": "alfabe",
+    "order": 1,
+    "level": "A1",
+    "title_av": "Авар алфавит",
+    "title_tr": "Avar alfabesi",
+    "title_ru": "Аварский алфавит",
+    "description_tr": "Telaffuz ve örneklerle Avar alfabesinin 46 harfi",
+    "description_ru": "46 букв аварского алфавита с произношением и примерами",
+    "content": {
+      "intro_tr": "Avar alfabesi 46 harften oluşur; 33 standart Rus harfi artı Kafkas sesleri için 13 özel iki harfli kombinasyon.",
+      "intro_ru": "Аварский алфавит состоит из 46 букв — 33 стандартные русские буквы плюс 13 специальных двухбуквенных комбинаций для кавказских звуков.",
+      "alphabet": [
+        "А а",
+        "Б б",
+        "В в",
+        "Г г",
+        "Гъ гъ",
+        "Гь гь",
+        "ГI гI",
+        "Д д",
+        "Е е",
+        "Ё ё",
+        "Ж ж",
+        "З з",
+        "И и",
+        "Й й",
+        "К к",
+        "Къ къ",
+        "Кь кь",
+        "КI кI",
+        "Л л",
+        "Лъ лъ",
+        "М м",
+        "Н н",
+        "О о",
+        "П п",
+        "Р р",
+        "С с",
+        "Т т",
+        "ТI тI",
+        "У у",
+        "Ф ф",
+        "Х х",
+        "Хъ хъ",
+        "Хь хь",
+        "ХI хI",
+        "Ц ц",
+        "ЦI цI",
+        "Ч ч",
+        "ЧI чI",
+        "Ш ш",
+        "Щ щ",
+        "Ъ ъ",
+        "Ы ы",
+        "Ь ь",
+        "Э э",
+        "Ю ю",
+        "Я я"
+      ],
+      "special_sounds": [
+        {
+          "letters": "Гъ, Къ, Хъ",
+          "description_tr": "Boğazda yapılan laringeal sesler",
+          "description_ru": "Гортанные звуки, произносимые в горле"
+        },
+        {
+          "letters": "Гь, Кь, Хь",
+          "description_tr": "Özel eklemli yumuşak seçenekler",
+          "description_ru": "Мягкие варианты с особой артикуляцией"
+        },
+        {
+          "letters": "КI, ТI, ЦI, ЧI",
+          "description_tr": "Kesici (glottal) ünsüzler",
+          "description_ru": "Абруптивные (смычногортанные) согласные"
+        },
+        {
+          "letters": "ГI, ХI",
+          "description_tr": "Faringeal sesler",
+          "description_ru": "Фарингальные звуки"
+        },
+        {
+          "letters": "Лъ",
+          "description_tr": "Donuk yan ses (donuk l)",
+          "description_ru": "Глухой боковой звук (глухое л)"
+        }
+      ]
+    }
+  },
+  {
+    "id": "selamlasma",
+    "order": 2,
+    "level": "A1",
+    "title_av": "Салам, гьит1ин ва жавабал",
+    "title_tr": "Selamlar, vedalar ve cevaplar",
+    "title_ru": "Приветствие, прощание и ответы",
+    "description_tr": "Avar'da temel selamlaşmalar, vedalaşmalar ve kibar ifadeler",
+    "description_ru": "Основные приветствия, прощания и вежливые выражения на аварском языке",
+    "content": {
+      "intro_tr": "Avar selamları muhatabın cinsiyetine göre değişir. Erkekler için sınıf göstergesi “v”, kadınlar için “th”, çoğul için “r” kullanılır.",
+      "intro_ru": "Аварские приветствия различаются по полу собеседника. Для мужчин используется классный показатель «в», для женщин — «й», для множественного числа — «р».",
+      "sections": [
+        {
+          "title_tr": "Selamlar",
+          "title_ru": "Приветствия",
+          "phrases": [
+            {
+              "av": "Салам",
+              "tr": "Merhaba / Merhaba",
+              "ru": "Привет / Здравствуйте"
+            },
+            {
+              "av": "АсаламгIалайкум",
+              "tr": "Selam seninle olsun (İslami selam)",
+              "ru": "Мир вам (исламское приветствие)"
+            },
+            {
+              "av": "ВагIалайкум салам",
+              "tr": "Ve sana barış (cevap)",
+              "ru": "И вам мир (ответ)"
+            },
+            {
+              "av": "ВорчIами",
+              "tr": "Merhaba / Günaydın (bir erkeğe)",
+              "ru": "Здравствуй / Доброе утро (к мужчине)"
+            },
+            {
+              "av": "ЙорчIами",
+              "tr": "Merhaba / Günaydın (bir kadına)",
+              "ru": "Здравствуй / Доброе утро (к женщине)"
+            },
+            {
+              "av": "РорчIами",
+              "tr": "Merhaba (çoğuna)",
+              "ru": "Здравствуйте (ко многим)"
+            }
+          ]
+        },
+        {
+          "title_tr": "Varış ve dönüş",
+          "title_ru": "Приезд и возвращение",
+          "phrases": [
+            {
+              "av": "ЛъикI щварав",
+              "tr": "Hoş geldin! (adamın yanına)",
+              "ru": "С приездом! (к мужчине)"
+            },
+            {
+              "av": "ЛъикI щварай",
+              "tr": "Hoş geldin! (kadına)",
+              "ru": "С приездом! (к женщине)"
+            },
+            {
+              "av": "ЛъикI щварал",
+              "tr": "Hoş geldin! (çoğuna)",
+              "ru": "С приездом! (ко многим)"
+            },
+            {
+              "av": "ЛъикI вуссарав",
+              "tr": "Tekrar hoşgeldiniz! (adamın yanına)",
+              "ru": "С возвращением! (к мужчине)"
+            },
+            {
+              "av": "ЛъикI ватарав",
+              "tr": "Seni sağlıklı bulduğuma sevindim! (adamın yanına)",
+              "ru": "Рад застать в здравии! (к мужчине)"
+            }
+          ]
+        },
+        {
+          "title_tr": "ayrılık",
+          "title_ru": "Прощание",
+          "phrases": [
+            {
+              "av": "Нахъа лъикI рихьаги",
+              "tr": "Güle güle",
+              "ru": "До свидания"
+            },
+            {
+              "av": "Къо-мех лъикI",
+              "tr": "Veda",
+              "ru": "Прощайте"
+            },
+            {
+              "av": "Сордо лъикI",
+              "tr": "İyi geceler",
+              "ru": "Спокойной ночи"
+            },
+            {
+              "av": "Нух битIаги",
+              "tr": "İyi yolculuklar (yalnız)",
+              "ru": "Счастливого пути (одному)"
+            },
+            {
+              "av": "Нухал ритIаги",
+              "tr": "İyi yolculuklar (çoğuna)",
+              "ru": "Счастливого пути (многим)"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "sayilar",
+    "order": 3,
+    "level": "A1",
+    "title_av": "Авар мацIалда гьисаб",
+    "title_tr": "Avar'da nasıl sayılır",
+    "title_ru": "Как считать на аварском",
+    "description_tr": "Avar dilinde 1'den 1000'e kadar sayılar",
+    "description_ru": "Числа от 1 до 1000 на аварском языке",
+    "content": {
+      "intro_tr": "Avar sayı sistemi 20 tabanlı sisteme dayanmaktadır (Gürcüce ve Baskça'da olduğu gibi).",
+      "intro_ru": "Аварская числовая система основана на двадцатеричной системе (как в грузинском и баскском языках).",
+      "sections": [
+        {
+          "title_tr": "1'den 10'a kadar sayılar",
+          "title_ru": "Числа от 1 до 10",
+          "words": [
+            {
+              "av": "цо",
+              "tr": "bir",
+              "ru": "один",
+              "num": 1
+            },
+            {
+              "av": "кIиго",
+              "tr": "iki",
+              "ru": "два",
+              "num": 2
+            },
+            {
+              "av": "лъабго",
+              "tr": "üç",
+              "ru": "три",
+              "num": 3
+            },
+            {
+              "av": "ункъо",
+              "tr": "dört",
+              "ru": "четыре",
+              "num": 4
+            },
+            {
+              "av": "щуго",
+              "tr": "beş",
+              "ru": "пять",
+              "num": 5
+            },
+            {
+              "av": "анлъго",
+              "tr": "altı",
+              "ru": "шесть",
+              "num": 6
+            },
+            {
+              "av": "анкьго",
+              "tr": "Yedi",
+              "ru": "семь",
+              "num": 7
+            },
+            {
+              "av": "микьго",
+              "tr": "sekiz",
+              "ru": "восемь",
+              "num": 8
+            },
+            {
+              "av": "ичIго",
+              "tr": "dokuz",
+              "ru": "девять",
+              "num": 9
+            },
+            {
+              "av": "анцIго",
+              "tr": "on",
+              "ru": "десять",
+              "num": 10
+            }
+          ]
+        },
+        {
+          "title_tr": "11'den 20'ye kadar sayılar",
+          "title_ru": "Числа от 11 до 20",
+          "words": [
+            {
+              "av": "анцIила цо",
+              "tr": "on bir",
+              "ru": "одиннадцать",
+              "num": 11
+            },
+            {
+              "av": "анцIила кIиго",
+              "tr": "on iki",
+              "ru": "двенадцать",
+              "num": 12
+            },
+            {
+              "av": "анцIила лъабго",
+              "tr": "on üç",
+              "ru": "тринадцать",
+              "num": 13
+            },
+            {
+              "av": "анцIила ункъго",
+              "tr": "on dört",
+              "ru": "четырнадцать",
+              "num": 14
+            },
+            {
+              "av": "анцIила щуго",
+              "tr": "on beş",
+              "ru": "пятнадцать",
+              "num": 15
+            },
+            {
+              "av": "къого",
+              "tr": "yirmi",
+              "ru": "двадцать",
+              "num": 20
+            }
+          ]
+        },
+        {
+          "title_tr": "Onlarca veya daha fazla",
+          "title_ru": "Десятки и больше",
+          "words": [
+            {
+              "av": "лъеберго",
+              "tr": "otuz",
+              "ru": "тридцать",
+              "num": 30
+            },
+            {
+              "av": "нусго",
+              "tr": "yüz",
+              "ru": "сто",
+              "num": 100
+            },
+            {
+              "av": "азарго",
+              "tr": "bin",
+              "ru": "тысяча",
+              "num": 1000
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "temel-fiiller",
+    "order": 4,
+    "level": "A1",
+    "title_av": "Авар мацIалъул хIалтIи гIадамал",
+    "title_tr": "Avar dilinin temel fiilleri",
+    "title_ru": "Основные глаголы аварского языка",
+    "description_tr": "Avar dilinin en yaygın fiilleri örneklerle",
+    "description_ru": "Самые употребительные глаголы аварского языка с примерами",
+    "content": {
+      "intro_tr": "Avar fiilleri gramer sınıflarına (eril, dişil, maddi) ve zamanlara göre değişiklik gösterir.",
+      "intro_ru": "Аварские глаголы изменяются по грамматическим классам (мужской, женский, вещественный) и временам.",
+      "sections": [
+        {
+          "title_tr": "Varlık ve varoluş",
+          "title_ru": "Бытие и существование",
+          "words": [
+            {
+              "av": "буго",
+              "tr": "var, var",
+              "ru": "есть, имеется",
+              "example_av": "Дир вац буго",
+              "example_tr": "bir erkek kardeşim var",
+              "example_ru": "У меня есть брат"
+            },
+            {
+              "av": "гьечIо",
+              "tr": "hayır, mevcut değil",
+              "ru": "нет, не имеется",
+              "example_av": "Дир яц гьечIо",
+              "example_tr": "kız kardeşim yok",
+              "example_ru": "У меня нет сестры"
+            },
+            {
+              "av": "букIине",
+              "tr": "olmak",
+              "ru": "быть"
+            }
+          ]
+        },
+        {
+          "title_tr": "Hareket",
+          "title_ru": "Движение",
+          "words": [
+            {
+              "av": "ине",
+              "tr": "Gitmek",
+              "ru": "идти"
+            },
+            {
+              "av": "бачIине",
+              "tr": "Gelmek",
+              "ru": "прийти"
+            },
+            {
+              "av": "боржине",
+              "tr": "uçmak",
+              "ru": "летать"
+            },
+            {
+              "av": "лъутизе",
+              "tr": "Kaçmak",
+              "ru": "убегать"
+            },
+            {
+              "av": "бекеризе",
+              "tr": "koşmak",
+              "ru": "бегать"
+            },
+            {
+              "av": "бусс-ине",
+              "tr": "geri gelmek",
+              "ru": "возвращаться"
+            }
+          ]
+        },
+        {
+          "title_tr": "Eylemler",
+          "title_ru": "Действия",
+          "words": [
+            {
+              "av": "цIализе",
+              "tr": "Okumak",
+              "ru": "читать",
+              "example_av": "Дун жуз цIализе",
+              "example_tr": "Bir kitap okuyorum",
+              "example_ru": "Я читаю книгу"
+            },
+            {
+              "av": "хъвазе",
+              "tr": "yazmak",
+              "ru": "писать"
+            },
+            {
+              "av": "гъабизе",
+              "tr": "Yapmak",
+              "ru": "делать"
+            },
+            {
+              "av": "бокъизе",
+              "tr": "Aşk",
+              "ru": "любить"
+            },
+            {
+              "av": "бихьизе",
+              "tr": "Görmek",
+              "ru": "видеть"
+            }
+          ]
+        },
+        {
+          "title_tr": "Duygular",
+          "title_ru": "Чувства",
+          "words": [
+            {
+              "av": "гIодизе",
+              "tr": "ağlamak",
+              "ru": "плакать"
+            },
+            {
+              "av": "ахIизе",
+              "tr": "bağırmak",
+              "ru": "кричать"
+            },
+            {
+              "av": "боххизе",
+              "tr": "sevinmek",
+              "ru": "радоваться"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "isimler-cogullar",
+    "order": 5,
+    "level": "A2",
+    "title_av": "ЦIарал ва жамагIат гьисаб",
+    "title_tr": "İsimler ve çoğullar",
+    "title_ru": "Существительные и множественное число",
+    "description_tr": "Avar dilinde çoğul ismin oluşumu",
+    "description_ru": "Образование множественного числа существительных в аварском языке",
+    "content": {
+      "intro_tr": "Avar dilinde çoğul çeşitli eklerle oluşturulur: -al/-yal, -(a)bi, -zabi ve diğerleri.",
+      "intro_ru": "В аварском языке множественное число образуется с помощью различных суффиксов: -ал/-ял, -(а)би, -заби и других.",
+      "sections": [
+        {
+          "title_tr": "Son ek -al/-yal",
+          "title_ru": "Суффикс -ал / -ял",
+          "description_tr": "Çoğul oluşturmak için en yaygın kullanılan son ek",
+          "description_ru": "Самый распространённый суффикс для образования множественного числа",
+          "words": [
+            {
+              "av": "квер",
+              "tr": "el",
+              "ru": "рука",
+              "av_plural": "кверал",
+              "tr_plural": "eller",
+              "ru_plural": "руки"
+            },
+            {
+              "av": "къо",
+              "tr": "gün",
+              "ru": "день",
+              "av_plural": "къоял",
+              "tr_plural": "günler",
+              "ru_plural": "дни"
+            },
+            {
+              "av": "лъар",
+              "tr": "nehir",
+              "ru": "река",
+              "av_plural": "лъарал",
+              "tr_plural": "nehirler",
+              "ru_plural": "реки"
+            },
+            {
+              "av": "чу",
+              "tr": "atış",
+              "ru": "лошадь",
+              "av_plural": "чуял",
+              "tr_plural": "atlar",
+              "ru_plural": "лошади"
+            },
+            {
+              "av": "вац",
+              "tr": "Erkek kardeş",
+              "ru": "брат",
+              "av_plural": "вацал",
+              "tr_plural": "kardeşler",
+              "ru_plural": "братья"
+            },
+            {
+              "av": "ци",
+              "tr": "ayı",
+              "ru": "медведь",
+              "av_plural": "циял",
+              "tr_plural": "ayılar",
+              "ru_plural": "медведи"
+            }
+          ]
+        },
+        {
+          "title_tr": "Son ek -(a)bi",
+          "title_ru": "Суффикс -(а)би",
+          "description_tr": "Sesli harfler ve -en ile biten kelimeler için kullanılır",
+          "description_ru": "Используется для слов на гласную и слов с окончанием -ен",
+          "words": [
+            {
+              "av": "маргьа",
+              "tr": "masal",
+              "ru": "сказка",
+              "av_plural": "маргьаби",
+              "tr_plural": "peri masalları",
+              "ru_plural": "сказки"
+            },
+            {
+              "av": "школа",
+              "tr": "okul",
+              "ru": "школа",
+              "av_plural": "школаби",
+              "tr_plural": "okullar",
+              "ru_plural": "школы"
+            },
+            {
+              "av": "ца",
+              "tr": "diş",
+              "ru": "зуб",
+              "av_plural": "цаби",
+              "tr_plural": "dişler",
+              "ru_plural": "зубы"
+            },
+            {
+              "av": "росу",
+              "tr": "köy",
+              "ru": "село",
+              "av_plural": "росаби",
+              "tr_plural": "köyler",
+              "ru_plural": "сёла"
+            }
+          ]
+        },
+        {
+          "title_tr": "Son ek -zabi",
+          "title_ru": "Суффикс -заби",
+          "description_tr": "Meslekler ve akrabalık terimleri için",
+          "description_ru": "Для профессий и терминов родства",
+          "words": [
+            {
+              "av": "устар",
+              "tr": "usta",
+              "ru": "мастер",
+              "av_plural": "устарзаби",
+              "tr_plural": "ustalar",
+              "ru_plural": "мастера"
+            },
+            {
+              "av": "учитель",
+              "tr": "Öğretmen",
+              "ru": "учитель",
+              "av_plural": "учительзаби",
+              "tr_plural": "öğretmenler",
+              "ru_plural": "учителя"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "temel-kelimeler",
+    "order": 6,
+    "level": "A1",
+    "title_av": "ТIабигIат, хан, тIагъур",
+    "title_tr": "Anahtar kelimeler: doğa, ev, aile",
+    "title_ru": "Основные слова: природа, дом, семья",
+    "description_tr": "Doğayı, evi ve aile ilişkilerini tanımlayan günlük kelimeler",
+    "description_ru": "Повседневные слова для описания природы, дома и семейных отношений",
+    "content": {
+      "intro_tr": "Avar dilinin günlük iletişim için gerekli temel kelimeleri.",
+      "intro_ru": "Базовые слова аварского языка, необходимые для повседневного общения.",
+      "sections": [
+        {
+          "title_tr": "Doğa",
+          "title_ru": "Природа",
+          "words": [
+            {
+              "av": "мега",
+              "tr": "Güneş",
+              "ru": "солнце"
+            },
+            {
+              "av": "моцI",
+              "tr": "ay",
+              "ru": "луна"
+            },
+            {
+              "av": "ракь",
+              "tr": "yıldız",
+              "ru": "звезда"
+            },
+            {
+              "av": "гIор",
+              "tr": "nehir",
+              "ru": "река"
+            },
+            {
+              "av": "мехед",
+              "tr": "dağ",
+              "ru": "гора"
+            },
+            {
+              "av": "росу",
+              "tr": "köy, köy",
+              "ru": "село, деревня"
+            },
+            {
+              "av": "хIур",
+              "tr": "alan",
+              "ru": "поле"
+            },
+            {
+              "av": "рохь",
+              "tr": "orman",
+              "ru": "лес"
+            },
+            {
+              "av": "лъим",
+              "tr": "su",
+              "ru": "вода"
+            },
+            {
+              "av": "цIа",
+              "tr": "ateş",
+              "ru": "огонь"
+            },
+            {
+              "av": "ракь",
+              "tr": "Toprak",
+              "ru": "земля"
+            },
+            {
+              "av": "гьури",
+              "tr": "rüzgâr",
+              "ru": "ветер"
+            }
+          ]
+        },
+        {
+          "title_tr": "Ev",
+          "title_ru": "Дом",
+          "words": [
+            {
+              "av": "хан",
+              "tr": "ev",
+              "ru": "дом"
+            },
+            {
+              "av": "рукъ",
+              "tr": "oda",
+              "ru": "комната"
+            },
+            {
+              "av": "нуцI",
+              "tr": "kapı",
+              "ru": "дверь"
+            },
+            {
+              "av": "гор",
+              "tr": "pencere",
+              "ru": "окно"
+            },
+            {
+              "av": "тахта",
+              "tr": "yatak",
+              "ru": "кровать"
+            },
+            {
+              "av": "стол",
+              "tr": "masa",
+              "ru": "стол"
+            }
+          ]
+        },
+        {
+          "title_tr": "Aile",
+          "title_ru": "Семья",
+          "words": [
+            {
+              "av": "эмен",
+              "tr": "baba",
+              "ru": "отец"
+            },
+            {
+              "av": "эбел",
+              "tr": "anne",
+              "ru": "мать"
+            },
+            {
+              "av": "вац",
+              "tr": "Erkek kardeş",
+              "ru": "брат"
+            },
+            {
+              "av": "яц",
+              "tr": "kız kardeş",
+              "ru": "сестра"
+            },
+            {
+              "av": "лъимер",
+              "tr": "çocuk",
+              "ru": "ребёнок"
+            },
+            {
+              "av": "чи",
+              "tr": "kişi, adam",
+              "ru": "человек, мужчина"
+            },
+            {
+              "av": "хIинчI",
+              "tr": "kadın",
+              "ru": "женщина"
+            },
+            {
+              "av": "бабай",
+              "tr": "büyükbaba",
+              "ru": "дедушка"
+            },
+            {
+              "av": "бабу",
+              "tr": "büyükanne",
+              "ru": "бабушка"
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

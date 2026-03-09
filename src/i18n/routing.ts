@@ -39,5 +39,11 @@ export const routing = defineRouting({
       ru: '/o-nas',
       en: '/about',
     },
+    '/dersler': {
+      tr: '/dersler',
+      av: '/дарсал',
+      ru: '/uroki',
+      en: '/lessons',
+    },
   },
 })

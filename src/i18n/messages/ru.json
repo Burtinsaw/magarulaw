@@ -78,6 +78,29 @@
       "diasporaLabel": "Диаспора"
     }
   },
+  "lessons": {
+    "title": "Уроки аварского языка",
+    "subtitle": "Авар мацӀ — Учите аварский шаг за шагом",
+    "allLessons": "Все уроки",
+    "level": "Уровень",
+    "words": "слов",
+    "phrases": "фраз",
+    "startLesson": "Начать урок",
+    "noLessons": "Уроков пока нет.",
+    "backToLessons": "К урокам",
+    "vocabulary": "Словарь",
+    "examples": "Примеры",
+    "grammar": "Грамматика",
+    "nextLesson": "Следующий урок",
+    "prevLesson": "Предыдущий урок",
+    "avar": "Аварский",
+    "turkish": "Турецкий",
+    "russian": "Русский",
+    "singular": "Единственное",
+    "plural": "Множественное",
+    "specialSounds": "Особые звуки",
+    "alphabet": "Алфавит"
+  },
   "footer": {
     "about": "О нас",
     "contact": "Контакты",

@@ -78,6 +78,29 @@
       "diasporaLabel": "Диаспора"
     }
   },
+  "lessons": {
+    "title": "Авар мацӀалъул дарсал",
+    "subtitle": "Авар мацӀ — ГьитӀинабго лъазе",
+    "allLessons": "ЦинагӀиб дарсал",
+    "level": "ДаражӀа",
+    "words": "калима",
+    "phrases": "калам",
+    "startLesson": "Дарс бехьизе",
+    "noLessons": "Дарсал гьечӀо.",
+    "backToLessons": "Дарсазде",
+    "vocabulary": "Калимаби",
+    "examples": "Мисалал",
+    "grammar": "Грамматика",
+    "nextLesson": "ГӀуниб дарс",
+    "prevLesson": "Гьаб дарс",
+    "avar": "Авар",
+    "turkish": "Туркиял",
+    "russian": "Рус",
+    "singular": "Цо гьисаб",
+    "plural": "ЖамагӀат гьисаб",
+    "specialSounds": "Хасияб тӀадал",
+    "alphabet": "Алфавит"
+  },
   "footer": {
     "about": "ГӀуниб",
     "contact": "Бахъ бицине",

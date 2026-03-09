@@ -78,6 +78,29 @@
       "diasporaLabel": "Diaspora"
     }
   },
+  "lessons": {
+    "title": "Avarca Dil Dersleri",
+    "subtitle": "Авар мацӀ — Adım adım Avarca öğrenin",
+    "allLessons": "Tüm Dersler",
+    "level": "Seviye",
+    "words": "kelime",
+    "phrases": "ifade",
+    "startLesson": "Derse Başla",
+    "noLessons": "Henüz ders eklenmemiş.",
+    "backToLessons": "Derslere Dön",
+    "vocabulary": "Kelime Listesi",
+    "examples": "Örnekler",
+    "grammar": "Gramer",
+    "nextLesson": "Sonraki Ders",
+    "prevLesson": "Önceki Ders",
+    "avar": "Avarca",
+    "turkish": "Türkçe",
+    "russian": "Rusça",
+    "singular": "Tekil",
+    "plural": "Çoğul",
+    "specialSounds": "Özel Sesler",
+    "alphabet": "Alfabe"
+  },
   "footer": {
     "about": "Hakkımızda",
     "contact": "İletişim",
