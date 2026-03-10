@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
 
-export function HeroSection({ locale, tagline, description }: { locale: string; tagline: string; description: string }) {
+export function HeroSection({ locale, tagline, description, stats }: { locale: string; tagline: string; description: string; stats?: { number: string; label: string; desc: string }[] }) {
   const mountainsRef = useRef<SVGSVGElement>(null)
   const ornamentRef = useRef<HTMLDivElement>(null)
   const bgRef = useRef<HTMLDivElement>(null)
@@ -55,7 +55,7 @@ export function HeroSection({ locale, tagline, description }: { locale: string; 
           </div>
         </div>
         <div className="flex flex-col gap-5 lg:justify-self-end" style={{ opacity: 0, animation: 'fadeInUp 0.8s ease 1.1s forwards' }}>
-          {statCards.map((stat, i) => (
+          {(stats || statCards).map((stat, i) => (
             <div key={i} className="min-w-[280px] p-5 lg:p-6 rounded-lg transition-all duration-300 hover:translate-x-[-4px]" style={{ background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(12px)', border: '1px solid rgba(255,255,255,0.06)' }}>
               <div className="leading-none mb-1" style={{ fontFamily: "'Playfair Display', Georgia, serif", fontSize: '2.4rem', fontWeight: 700, color: '#ddb866' }}>{stat.number}</div>
               <div className="text-[0.78rem] font-medium uppercase tracking-[0.06em]" style={{ fontFamily: "'Noto Sans', system-ui, sans-serif", color: '#a89279' }}>{stat.label}</div>
@@ -69,7 +69,7 @@ export function HeroSection({ locale, tagline, description }: { locale: string; 
 }
 
 const statCards = [
-  { number: '12,400+', label: 'Sözlük Kelimesi', desc: 'Avarca-Türkçe-Rusça karşılıklar' },
-  { number: '850+', label: 'Makale', desc: 'Tarih, kültür ve dil araştırmaları' },
+  { number: '6', label: 'Dil Dersi', desc: 'A1-B2 seviye Avarca dersler' },
+  { number: '10+', label: 'Sözlük Kelimesi', desc: 'Avarca-Türkçe-Rusça karşılıklar' },
   { number: '4', label: 'Dil Desteği', desc: 'Türkçe, Avarca, Rusça, İngilizce' },
 ]
