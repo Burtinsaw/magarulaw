@@ -528,3 +528,4 @@ const newsItems = [
     desc: 'Kafkas kulturu temali fotografcilik yarismasi sonuclandi.',
   },
 ]
+// fix
