@@ -1,5 +1,4 @@
 import { getTranslations } from 'next-intl/server'
-import { getCollectionCount } from '@/lib/payload-helpers'
 import Link from 'next/link'
 import Image from 'next/image'
 import { SectionHeader } from '@/components/SectionHeader'
@@ -14,7 +13,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   return (
     <>
       {/* Hero */}
-      <HeroSection locale={locale} tagline={t('tagline')} description={t('description')} stats={dynamicStats} />
+      <HeroSection locale={locale} tagline={t('tagline')} description={t('description')} />
 
       {/* Features */}
       <section className="relative py-14 lg:py-20" style={{ background: '#faf8f4' }}>
