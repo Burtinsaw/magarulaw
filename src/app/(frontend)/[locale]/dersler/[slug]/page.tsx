@@ -253,6 +253,46 @@ function LessonContent({
                       </tbody>
                     </table>
 
+                    {/* Noun class forms for verbs */}
+                    {section.words.some((w: any) => w.class_prefixes) && (
+                      <div className="mt-4 space-y-2">
+                        <h4 className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: '#a89279' }}>
+                          {t('nounClasses')}
+                        </h4>
+                        {section.words
+                          .filter((w: any) => w.class_prefixes)
+                          .map((w: any, ci: number) => (
+                            <div
+                              key={ci}
+                              className="rounded-lg p-4"
+                              style={{ background: 'rgba(45,41,38,0.03)', border: '1px solid rgba(45,41,38,0.06)' }}
+                            >
+                              <p className="text-sm font-bold mb-2" style={{ fontFamily: "'Playfair Display', Georgia, serif", color: '#2d2926' }}>
+                                {w.av} <span style={{ color: '#a89279', fontWeight: 400 }}>— {w.tr}</span>
+                              </p>
+                              <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+                                <div className="p-2 rounded" style={{ background: 'rgba(44,82,130,0.06)' }}>
+                                  <span style={{ color: '#a89279' }}>♂ {t('male')}: </span>
+                                  <span className="font-semibold" style={{ color: '#2c5282' }}>{w.class_prefixes.m}</span>
+                                </div>
+                                <div className="p-2 rounded" style={{ background: 'rgba(166,61,47,0.06)' }}>
+                                  <span style={{ color: '#a89279' }}>♀ {t('female')}: </span>
+                                  <span className="font-semibold" style={{ color: '#a63d2f' }}>{w.class_prefixes.f}</span>
+                                </div>
+                                <div className="p-2 rounded" style={{ background: 'rgba(197,151,62,0.06)' }}>
+                                  <span style={{ color: '#a89279' }}>{t('thing')}: </span>
+                                  <span className="font-semibold" style={{ color: '#c5973e' }}>{w.class_prefixes.n}</span>
+                                </div>
+                                <div className="p-2 rounded" style={{ background: 'rgba(45,41,38,0.04)' }}>
+                                  <span style={{ color: '#a89279' }}>{t('plural2')}: </span>
+                                  <span className="font-semibold" style={{ color: '#2d2926' }}>{w.class_prefixes.pl}</span>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                      </div>
+                    )}
+
                     {/* Example sentences (for words with examples) */}
                     {section.words.some((w: any) => w.example_av) && (
                       <div className="mt-4 space-y-2">

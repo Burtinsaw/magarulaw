@@ -99,7 +99,12 @@
     "singular": "Singular",
     "plural": "Plural",
     "specialSounds": "Special Sounds",
-    "alphabet": "Alphabet"
+    "alphabet": "Alphabet",
+    "nounClasses": "Noun Classes (v/y/b/r)",
+    "male": "Male",
+    "female": "Female",
+    "thing": "Thing",
+    "plural2": "Plural"
   },
   "footer": {
     "about": "About",

@@ -99,7 +99,12 @@
     "singular": "Единственное",
     "plural": "Множественное",
     "specialSounds": "Особые звуки",
-    "alphabet": "Алфавит"
+    "alphabet": "Алфавит",
+    "nounClasses": "Именные классы (в/й/б/р)",
+    "male": "Муж.",
+    "female": "Жен.",
+    "thing": "Вещь",
+    "plural2": "Мн.ч."
   },
   "footer": {
     "about": "О нас",

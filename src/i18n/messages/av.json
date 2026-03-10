@@ -99,7 +99,12 @@
     "singular": "Цо гьисаб",
     "plural": "ЖамагӀат гьисаб",
     "specialSounds": "Хасияб тӀадал",
-    "alphabet": "Алфавит"
+    "alphabet": "Алфавит",
+    "nounClasses": "ГрахъалъулIи (в/й/б/р)",
+    "male": "Гьалмагъ",
+    "female": "ЧIужу",
+    "thing": "ЧIезе",
+    "plural2": "ГIадамал"
   },
   "footer": {
     "about": "ГӀуниб",

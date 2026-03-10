@@ -99,7 +99,12 @@
     "singular": "Tekil",
     "plural": "Çoğul",
     "specialSounds": "Özel Sesler",
-    "alphabet": "Alfabe"
+    "alphabet": "Alfabe",
+    "nounClasses": "İsim Sınıfları (в/й/б/р)",
+    "male": "Erkek",
+    "female": "Kadın",
+    "thing": "Eşya",
+    "plural2": "Çoğul"
   },
   "footer": {
     "about": "Hakkımızda",
